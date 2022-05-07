@@ -37,5 +37,9 @@ See the [example](example/src/App.tsx)
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
+## TODO
+- Add more custamizeable component
+- Close toast by swipe
+
 ## License
 MIT
