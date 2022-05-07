@@ -14,7 +14,7 @@ yarn add react-native-use-toast
 ```
 
 ## Usage
-See the [example](example/App.tsx)
+See the [example](example/src/App.tsx)
 ```
   const { toast } = useToast();
   return (

@@ -1,6 +1,6 @@
 {
   "name": "react-native-use-toast",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "useToast hook like Chakra UI in React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
