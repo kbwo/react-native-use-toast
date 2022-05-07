@@ -7,15 +7,16 @@ export const popupStyles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     padding: 8,
+    flex: 1,
   },
   bottom: {
-    bottom: 15,
+    bottom: 5,
   },
   left: {
     left: 10,
   },
   top: {
-    top: 15,
+    top: 5,
   },
   right: {
     right: 10,
@@ -45,5 +46,16 @@ export const popupStyles = StyleSheet.create({
   },
   description: {
     color: 'white',
+  },
+  closeIconWrapper: {
+    position: 'absolute',
+    top: 0,
+    right: 4,
+    zIndex: 100,
+  },
+  closeIcon: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
   },
 });

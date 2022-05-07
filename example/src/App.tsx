@@ -15,6 +15,7 @@ const Component = () => {
             description: 'This is description',
             duration: 3000,
             position: 'bottom',
+            status: 'success',
           });
         }}
       />
@@ -22,10 +23,11 @@ const Component = () => {
         title="bottom left"
         onPress={() => {
           toast({
-            title: 'Success',
+            title: 'Info',
             description: 'This is description',
             duration: 3000,
             position: 'bottom-left',
+            status: 'info',
           });
         }}
       />
@@ -33,10 +35,11 @@ const Component = () => {
         title="bottom right"
         onPress={() => {
           toast({
-            title: 'Success',
+            title: 'Warning',
             description: 'This is description',
             duration: 3000,
             position: 'bottom-right',
+            status: 'warning',
           });
         }}
       />
@@ -44,10 +47,11 @@ const Component = () => {
         title="top"
         onPress={() => {
           toast({
-            title: 'Success',
+            title: 'Error',
             description: 'This is description',
             duration: 3000,
             position: 'top',
+            status: 'error',
           });
         }}
       />
@@ -55,10 +59,11 @@ const Component = () => {
         title="top left"
         onPress={() => {
           toast({
-            title: 'Success',
+            title: 'Info',
             description: 'This is description',
             duration: 3000,
             position: 'top-left',
+            status: 'info',
           });
         }}
       />
@@ -66,10 +71,11 @@ const Component = () => {
         title="top right"
         onPress={() => {
           toast({
-            title: 'Success',
+            title: 'Warning',
             description: 'This is description',
             duration: 3000,
             position: 'top-right',
+            status: 'warning',
           });
         }}
       />
@@ -79,13 +85,18 @@ const Component = () => {
 
 export default function App() {
   return (
-    <ToastProvider>
-      <Component />
-    </ToastProvider>
+    <SafeAreaView style={styles.safeArea}>
+      <ToastProvider>
+        <Component />
+      </ToastProvider>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     alignItems: 'center',

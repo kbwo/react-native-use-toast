@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, Text, useWindowDimensions, ViewStyle } from 'react-native';
+import {
+  Animated,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  ViewStyle,
+} from 'react-native';
 import { popupStyles } from './popup.style';
 
 type Position =
@@ -29,9 +35,8 @@ export const Popup: React.FC<PopupProps> = ({
   description,
   duration,
   id,
-  // onCloseComplete,
   position,
-  // status,
+  status,
   title,
   onClose,
 }) => {
@@ -94,9 +99,12 @@ export const Popup: React.FC<PopupProps> = ({
         { width: windowWidth * 0.8, transform: [{ translateY: openAnim }] },
         popupStyles.defaultHeight,
         containerStyle,
-        popupStyles.success,
+        status ? popupStyles[status] : popupStyles.success,
       ]}
     >
+      <TouchableOpacity onPress={onClose} style={popupStyles.closeIconWrapper}>
+        <Text style={popupStyles.closeIcon}>×</Text>
+      </TouchableOpacity>
       <Text style={popupStyles.title}>{title}</Text>
       {description ? (
         <Text style={popupStyles.description}>{description}</Text>
