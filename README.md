@@ -1,7 +1,8 @@
-# [wip] react-native-use-toast
+# react-native-use-toast
 
-useToast hook like Chakra UI in React Native
-
+- useToast hook like Chakra UI in React Native.
+- simple and easy to use.
+- animation.
 
 https://user-images.githubusercontent.com/54230093/167245668-e1832699-fbca-4bd1-b964-9f94cf6d1a3e.mov
 
