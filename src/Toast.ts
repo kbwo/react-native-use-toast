@@ -1,7 +1,7 @@
 import { Popup, PopupProps } from './Popup';
 
 export class Toast {
-  id?: number;
+  id: number;
   props: PopupProps;
   constructor(id: number, props: PopupProps) {
     this.id = id;

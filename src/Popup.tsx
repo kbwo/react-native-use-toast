@@ -21,19 +21,23 @@ export type PopupProps = {
   position?: Position;
   status?: Status;
   title: string;
+  onClose?: () => void;
 };
 
 export const Popup: React.FC<PopupProps> = ({
   containerStyle,
   description,
-  // duration,
+  duration,
   id,
   // onCloseComplete,
   position,
   // status,
   title,
+  onClose,
 }) => {
-  const openAnim = useRef(new Animated.Value(10)).current;
+  const openAnim = useRef(
+    new Animated.Value(position?.includes('top') ? -10 : 10)
+  ).current;
 
   const { width: windowWidth } = useWindowDimensions();
   const horizontalMargin = windowWidth * 0.1;
@@ -74,6 +78,12 @@ export const Popup: React.FC<PopupProps> = ({
     };
     fadeIn();
   }, [openAnim]);
+
+  useEffect(() => {
+    if (duration && onClose) {
+      setTimeout(onClose, duration);
+    }
+  }, [onClose, duration]);
 
   return (
     <Animated.View
