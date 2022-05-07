@@ -1,19 +1,30 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-use-toast';
+import { StyleSheet, SafeAreaView, Button } from 'react-native';
+import { ToastProvider, useToast } from 'react-native-use-toast';
+
+const Component = () => {
+  const { toast } = useToast();
+  return (
+    <SafeAreaView style={styles.container}>
+      <Button
+        title="Show toast"
+        onPress={() => {
+          toast({
+            title: 'Success',
+            description: 'This is description',
+          });
+        }}
+      />
+    </SafeAreaView>
+  );
+};
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <ToastProvider>
+      <Component />
+    </ToastProvider>
   );
 }
 
